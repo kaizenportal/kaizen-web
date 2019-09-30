@@ -29,13 +29,13 @@ pipeline {
 
             }
         }
-        /*stage('Deploy Artifactory') {
+        stage('Deploy Artifactory') {
             steps {
                 echo 'Desplegando artefacto en nexus'
 		bat 'C:\\maven-3.6.2\\bin\\mvn deploy'
 
             }
-        }*/
+        }
         /*stage('CreateVirtualEnv') {
             steps {
 				sh '''
