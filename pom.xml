@@ -3,8 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.flowing.trip</groupId>
     <artifactId>camunda.jenkins.nexus</artifactId>
-    <!--version>0.0.1-SNAPSHOT</version-->
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -152,10 +151,10 @@
             <name>admin</name>
             <url>http://10.0.11.15:8081/nexus/content/repositories/jenkins-hosted</url>
         </snapshotRepository>
-        <repository>
+        <!--repository>
             <id>admin</id>
             <name>admin</name>
-            <url>http://10.0.11.15:8081/nexus/content/repositories/jenkins-proxy</url>
-        </repository>
+            <url>http://10.0.11.15:8081/nexus/content/repositories/jenkins-hosted</url>
+        </repository-->
     </distributionManagement>
 </project>

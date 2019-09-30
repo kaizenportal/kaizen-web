@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy Artifactory') {
             steps {
                 echo 'Desplegando artefacto en nexus'
-		bat 'C:\\maven-3.6.2\\bin\\mvn deploy'
+		bat 'C:\\maven-3.6.2\\bin\\mvn deploy -Dmaven.test.skip=true'
 
             }
         }
