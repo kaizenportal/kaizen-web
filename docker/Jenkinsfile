@@ -4,18 +4,28 @@ pipeline {
  stages {
         stage('Checkout-git'){
                steps{
+                echo 'Revisando repositorio del Proyecto'
 		git poll: true, url: 'https://github.com/kaizenportal/kaizen-web.git'
                }
         }
         stage('Build Project') {
             steps {
+                echo 'Realizando Build al Proyecto'
 		bat 'C:\\maven-3.6.2\\bin\\mvn clean compile package'
 
             }
         }
         stage('Test Project') {
             steps {
+                echo 'Realizando Test al Proyecto'
 		bat 'C:\\maven-3.6.2\\bin\\mvn verify'
+
+            }
+        }
+        stage('Deploy Artifactory') {
+            steps {
+                echo 'Desplegando artefacto en nexus'
+		bat 'C:\\maven-3.6.2\\bin\\mvn deploy'
 
             }
         }
