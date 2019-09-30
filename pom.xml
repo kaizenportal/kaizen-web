@@ -125,7 +125,7 @@
         <snapshotRepository>
             <id>jenkins-proxy</id>
             <name>jenkins-proxy</name>
-            <url>http://localhost:8081/nexus/content/repositories/jenkins-proxy</url>
+            <url>http://10.0.11.15:8081/nexus/content/repositories/jenkins-proxy</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
