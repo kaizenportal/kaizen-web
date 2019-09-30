@@ -7,9 +7,15 @@ pipeline {
 		git poll: true, url: 'https://github.com/kaizenportal/kaizen-web.git'
                }
         }
-        stage('Clean Project') {
+        stage('Build Project') {
             steps {
-		bat 'C:\\maven-3.6.2\\bin\\mvn clean'
+		bat 'C:\\maven-3.6.2\\bin\\mvn clean compile package'
+
+            }
+        }
+        stage('Test Project') {
+            steps {
+		bat 'C:\\maven-3.6.2\\bin\\mvn verify'
 
             }
         }
