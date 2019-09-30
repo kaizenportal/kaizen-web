@@ -15,20 +15,27 @@ pipeline {
 
             }
         }
-        stage('Test Project') {
+        /*stage('Test Project') {
             steps {
                 echo 'Realizando Test al Proyecto'
 		bat 'C:\\maven-3.6.2\\bin\\mvn verify'
 
             }
+        }*/
+        stage('SonarQube Project') {
+            steps {
+                echo 'Test SonarQube'
+		bat 'C:\\maven-3.6.2\\bin\\mvn sonar:sonar -Dsonar.projectKey=integracion-continua -Dsonar.host.url=http://10.0.11.15:9000 -Dsonar.login=e799fc83980ef097d519d379b6290ab17f6f29aa'
+
+            }
         }
-        stage('Deploy Artifactory') {
+        /*stage('Deploy Artifactory') {
             steps {
                 echo 'Desplegando artefacto en nexus'
 		bat 'C:\\maven-3.6.2\\bin\\mvn deploy'
 
             }
-        }
+        }*/
         /*stage('CreateVirtualEnv') {
             steps {
 				sh '''
