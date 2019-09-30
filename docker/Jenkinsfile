@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Clean Project') {
             steps {
-		bat 'mvn clean'
+		bat 'C:\maven-3.6.2\bin\mvn clean'
 
             }
         }
